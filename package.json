@@ -1,0 +1,28 @@
+{
+  "name": "bare-bones-node",
+  "description": "A bare bones Node.js project with TypeScript and Hono",
+  "author": {
+    "name": "Tarık Yusuf Yıldızcı",
+    "email": "tarikyyildizci@gmail.com",
+    "url": "tarikyildizci.com"
+  },
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "hak": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "npm run build && node build/index.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.7.0",
+    "hono": "^4.0.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsc": "^2.0.4",
+    "tsx": "^3.12.2"
+  },
+  "license": "MIT"
+}
