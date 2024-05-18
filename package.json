@@ -8,11 +8,14 @@
   },
   "version": "0.0.1",
   "type": "module",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "hak": "tsx watch src/index.ts",
-    "build": "tsc",
-    "start": "npm run build && node build/index.js"
+    "build": "pkgroll",
+    "start": "node dist/index.js",
+    "format": "prettier --write .",
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@hono/node-server": "^1.7.0",
@@ -21,8 +24,17 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "tsc": "^2.0.4",
-    "tsx": "^3.12.2"
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "pkgroll": "^2.1.0",
+    "prettier": "^3.2.5",
+    "tsx": "^4.10.5"
+  },
+  "lint-staged": {
+    "*": [
+      "yarn format",
+      "git add"
+    ]
   },
   "license": "MIT"
 }

@@ -1,10 +1,10 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { log, cors } from './middleware'
+import { cors } from './middleware'
 
 const app = new Hono({})
 
-app.use(log(), cors())
+app.use(cors())
 
 app.use('/hello')
 
